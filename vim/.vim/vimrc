@@ -19,7 +19,8 @@ set showcmd
 set showmode
 
 set wildmenu
-set wildmode=list:full
+set wildmode=longest:full,full
+set wildoptions=pum
 
 set termguicolors
 colorscheme catppuccin_mocha
