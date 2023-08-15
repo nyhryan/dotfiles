@@ -1,0 +1,25 @@
+set nocompatible
+
+" Turn syntax highlighting on.
+syntax on
+
+" Set relative line number
+set relativenumber
+
+" Tab related settings
+set shiftwidth=4 
+set tabstop=4
+set expandtab
+
+" Do not let cursor scroll below or above N number of lines when scrolling.
+set scrolloff=10
+
+" show last input and current mode
+set showcmd
+set showmode
+
+set wildmenu
+set wildmode=list:full
+
+set termguicolors
+colorscheme catppuccin_mocha
