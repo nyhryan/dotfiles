@@ -19,3 +19,6 @@ set.incsearch = true
 set.hlsearch = false
 set.ignorecase = true
 set.smartcase = true
+
+set.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20"
+
