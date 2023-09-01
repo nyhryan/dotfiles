@@ -7,3 +7,4 @@ Currently under construction!
 
 ### Notes
 - Use Vim version `9.0+` !
+- Install nvm! [nvm - Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating)
