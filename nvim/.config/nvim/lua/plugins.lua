@@ -39,13 +39,17 @@ return require('packer').startup(function(use)
     -- NOTE: PUT YOUR THIRD PLUGIN HERE --
     ---------------------------------------
     use { "catppuccin/nvim", as = "catppuccin" }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
     use { 'williamboman/mason.nvim' }
     use { 'williamboman/mason-lspconfig.nvim'}
 
     use { 'neovim/nvim-lspconfig' }
-    use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }    
-    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' } 
+    use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
+    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
     use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }        -- buffer auto-completion
     use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }          -- path auto-completion
     use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' }       -- cmdline auto-completion

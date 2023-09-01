@@ -71,6 +71,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
+# antigen plugin manager
 ANTIGEN_PATH=~/.dotfiles
 source $ANTIGEN_PATH/antigen/antigen.zsh
 
@@ -127,6 +128,11 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
+
+alias ga="git add"
+alias gc="git commit"
+alias gpsh="git push"
+alias gpll="git pull"
 
 # nvm settings
 export NVM_DIR="$HOME/.nvm"
