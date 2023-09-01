@@ -102,6 +102,10 @@ antigen theme zthxxx/jovial
 # Tell antigen that you're done
 antigen apply
 
+# Jovial zsh theme customization
+JOVIAL_SYMBOL[corner.top]='╭─🧊'
+JOVIAL_SYMBOL[git.dirty]='✘'
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -128,11 +132,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
-
-#alias ga="git add"
-#alias gc="git commit"
-#alias gpsh="git push"
-#alias gpll="git pull"
 
 # nvm settings
 export NVM_DIR="$HOME/.nvm"
