@@ -129,10 +129,10 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
 
-alias ga="git add"
-alias gc="git commit"
-alias gpsh="git push"
-alias gpll="git pull"
+#alias ga="git add"
+#alias gc="git commit"
+#alias gpsh="git push"
+#alias gpll="git pull"
 
 # nvm settings
 export NVM_DIR="$HOME/.nvm"
