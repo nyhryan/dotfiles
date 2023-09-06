@@ -2,6 +2,11 @@
 
 Currently under construction!
 
+### Usage
+- `git clone --recurse-submodules https://github.com/nyhryan/ATAI-Dotfiles.git .dotfiles` to clone this repo.
+- Install `stow` to use these dotfiles.
+
+
 ### Things used
 - Vim
     - Vim catppuccin colorscheme: [Catppuccin for Vim](https://github.com/catppuccin/vim)
@@ -16,4 +21,6 @@ Currently under construction!
 ### Notes
 - Use Vim version `9.0+` !
 - Install zsh + Oh-my-zsh !
+- Install neovim!
 - Install nvm! [nvm - Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Install stow!
