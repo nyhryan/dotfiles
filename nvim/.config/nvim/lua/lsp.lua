@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = {'lua_ls'},
+    ensure_installed = {'lua_ls', 'clangd'}
 })
 
 -- Set different settings for different languages' LSP
@@ -55,6 +55,7 @@ end
 
 -- lua_ls setup
 lspconfig.lua_ls.setup {
+    on_attach = on_attach,
     settings = {
         Lua = {
             runtime = {
@@ -75,4 +76,9 @@ lspconfig.lua_ls.setup {
             },
         },
     },
+}
+
+-- clangd setup
+lspconfig.clangd.setup {
+    on_attach = on_attach
 }

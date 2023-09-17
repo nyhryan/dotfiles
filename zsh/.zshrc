@@ -95,6 +95,7 @@ antigen bundles <<EOBUNDLES
     # jovial theme (zthxxx/jovial)
     zthxxx/jovial
     zthxxx/zsh-history-enquirer
+
 EOBUNDLES
 
 # Load the theme
