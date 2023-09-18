@@ -76,3 +76,5 @@ lspconfig.lua_ls.setup {
         },
     },
 }
+
+lspconfig.clangd.setup {}
