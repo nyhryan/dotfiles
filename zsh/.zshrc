@@ -127,3 +127,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
+
+# disables '%' appearing after printf("..."); in C programming
+PROMPT_EOL_MARK=''
