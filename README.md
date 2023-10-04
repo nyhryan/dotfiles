@@ -22,5 +22,6 @@ Currently under construction!
 - Use Vim version `9.0+` !
 - Install zsh + Oh-my-zsh !
 - Install neovim!
+    - Install clangd package (if using C/C++ with nvim)
 - Install nvm! [nvm - Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating)
 - Install stow!
