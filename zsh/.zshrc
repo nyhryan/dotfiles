@@ -126,14 +126,15 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 if [[ ${ZSH_PROFILE} = default ]]; then
-    alias vim="nvim"
     export EDITOR='nvim'
 else
-    export EDITOR='vim'
+    export EDITOR="/usr/bin/vim"
 fi
 
+alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias python="python3"
+alias oldvim="/usr/bin/vim"
 
 # disables '%' appearing after printf("..."); in C programming
 PROMPT_EOL_MARK=''
