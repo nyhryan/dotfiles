@@ -38,15 +38,12 @@ return require('packer').startup(function(use)
     ---------------------------------------
     -- NOTE: PUT YOUR THIRD PLUGIN HERE --
     ---------------------------------------
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
 
+    -- LSP
     use { 'williamboman/mason.nvim' }
     use { 'williamboman/mason-lspconfig.nvim'}
 
+    -- auto completion
     use { 'neovim/nvim-lspconfig' }
     use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
     use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
@@ -56,7 +53,15 @@ return require('packer').startup(function(use)
     use { 'L3MON4D3/LuaSnip' }
     use { 'saadparwaiz1/cmp_luasnip' }
 
+    -- colorscheme
+    use { "catppuccin/nvim", as = "catppuccin" }
 
+    -- status line
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = [[require('config.lualine')]],
+    }
 
 
 

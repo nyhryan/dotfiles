@@ -79,6 +79,6 @@ lspconfig.lua_ls.setup {
 }
 
 -- clangd setup
-lspconfig.clangd.setup {
-    on_attach = on_attach
-}
+lspconfig.clangd.setup({
+    on_attach = on_attach,
+})
