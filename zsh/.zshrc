@@ -125,12 +125,6 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-if [[ ${ZSH_PROFILE} = default ]]; then
-    export EDITOR='nvim'
-else
-    export EDITOR="/usr/bin/vim"
-fi
-
 alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias python="python3"
