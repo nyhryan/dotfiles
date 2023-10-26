@@ -4,12 +4,18 @@ local opts = {
     silent = true,       -- do not show message
 }
 
+-- set leader key as <spacebar>
+vim.g.mapleader = ' '
+
 -----------------
 -- Normal mode --
 -----------------
 
 -- Hint: see `:h vim.map.set()`
 -- Better window navigation
+
+vim.keymap.set('n','<leader>pv', ':Ex<CR>', opts)
+
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
 vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
