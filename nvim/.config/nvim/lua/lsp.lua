@@ -82,3 +82,8 @@ lspconfig.lua_ls.setup {
 lspconfig.clangd.setup({
     on_attach = on_attach,
 })
+
+-- ts-language-server setup
+lspconfig.tsserver.setup({
+    on_attach = on_attach,
+})
