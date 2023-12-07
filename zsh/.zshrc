@@ -100,6 +100,7 @@ antigen apply
 # Jovial zsh theme customization
 JOVIAL_SYMBOL[corner.top]='╭─🧊'
 JOVIAL_SYMBOL[git.dirty]='✘'
+JOVIAL_AFFIXES[current-dir]='%3~'
 
 source $ZSH/oh-my-zsh.sh
 
