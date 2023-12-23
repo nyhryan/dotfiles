@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = {'lua_ls', 'clangd'}
+    ensure_installed = {'lua_ls'}
 })
 
 -- Set different settings for different languages' LSP
@@ -78,12 +78,8 @@ lspconfig.lua_ls.setup {
     },
 }
 
--- clangd setup
-lspconfig.clangd.setup({
-    on_attach = on_attach,
-})
-
 -- ts-language-server setup
 lspconfig.tsserver.setup({
     on_attach = on_attach,
 })
+
