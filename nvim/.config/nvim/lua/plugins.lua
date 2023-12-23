@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
 
     -- status line
+    use { 'nvim-tree/nvim-web-devicons' }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true },
@@ -64,7 +65,20 @@ return require('packer').startup(function(use)
     }
 
 
+    -- nvim-tree
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = [[require('config.nvim-tree')]],
+    }
 
+    -- bufferline
+    use {
+        'akinsho/bufferline.nvim',
+        tag = '*',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = [[require('config.bufferline')]],
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

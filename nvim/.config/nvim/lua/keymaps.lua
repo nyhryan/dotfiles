@@ -15,7 +15,7 @@ vim.g.mapleader = ' '
 -- Better window navigation
 
 -- open netrw with <space>ex
-vim.keymap.set('n','<leader>ex', ':Ex<CR>', opts)
+-- vim.keymap.set('n','<leader>ex', ':Ex<CR>', opts)
 
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
