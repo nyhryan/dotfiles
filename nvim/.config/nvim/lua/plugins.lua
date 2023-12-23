@@ -80,6 +80,9 @@ return require('packer').startup(function(use)
         config = [[require('config.bufferline')]],
     }
 
+    -- which-key
+    use { 'folke/which-key.nvim', config = [[require('config.which-key')]] }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
