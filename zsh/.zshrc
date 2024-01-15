@@ -98,7 +98,9 @@ antigen theme zthxxx/jovial
 antigen apply
 
 # Jovial zsh theme customization
-JOVIAL_SYMBOL[corner.top]='╭─🧊'
+JOVIAL_SYMBOL[corner.top]=''
+JOVIAL_SYMBOL[corner.bottom]=''
+JOVIAL_SYMBOL[arrow]='\uf061'
 JOVIAL_SYMBOL[git.dirty]='✘'
 JOVIAL_AFFIXES[current-dir]='%3~'
 
@@ -133,3 +135,10 @@ alias oldvim="/usr/bin/vim"
 
 # disables '%' appearing after printf("..."); in C programming
 PROMPT_EOL_MARK=''
+
+# bun completions
+[ -s "/home/atai/.bun/_bun" ] && source "/home/atai/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
