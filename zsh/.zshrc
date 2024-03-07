@@ -100,7 +100,7 @@ antigen apply
 # Jovial zsh theme customization
 JOVIAL_SYMBOL[corner.top]=''
 JOVIAL_SYMBOL[corner.bottom]=''
-JOVIAL_SYMBOL[arrow]='\uf061'
+JOVIAL_SYMBOL[arrow]='$'
 JOVIAL_SYMBOL[git.dirty]='✘'
 JOVIAL_AFFIXES[current-dir]='%3~'
 
