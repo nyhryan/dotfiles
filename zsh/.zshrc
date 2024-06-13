@@ -9,9 +9,11 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export ZSH="$HOME/.oh-my-zsh"
 
 # nvm setup
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [ -d "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -131,17 +133,26 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-alias vim="nvim"
-alias zshconfig="vim ~/.zshrc"
-alias python="python3"
-alias oldvim="/usr/bin/vim"
+alias vim='nvim'
+alias zshconfig='vim ~/.zshrc'
+alias python='python3'
+alias oldvim='/usr/bin/vim'
+alias ls='ls -GF'
 
 # disables '%' appearing after printf("..."); in C programming
 PROMPT_EOL_MARK=''
 
+if [ -d "/opt/homebrew/opt/chruby" ]; then
+    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+    chruby ruby-3.2.2
+fi
+
 # bun completions
-[ -s "/home/atai/.bun/_bun" ] && source "/home/atai/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "/home/atai/.bun/_bun"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+if [ -d "$HOME/.bun" ]; then
+    export BUN_INSTALL="$HOME/.bun"
+    export PATH="$BUN_INSTALL/bin:$PATH"
+fi
