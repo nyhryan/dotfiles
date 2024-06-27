@@ -118,7 +118,7 @@ if [ -d "/opt/homebrew/opt/chruby" ]; then
 fi
 
 # bun completions
-[ -s "$HOME/.bun/_bun" ] && source "/home/atai/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 if [ -d "$HOME/.bun" ]; then
