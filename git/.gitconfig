@@ -5,7 +5,9 @@
 	defaultBranch = main
 [pull]
 	rebase = true
+[fetch]
+	prune = true
 [core]
-	autocrlf = false
+	autocrlf = input
 [safe]
 	directory = *
