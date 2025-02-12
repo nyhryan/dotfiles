@@ -1,0 +1,13 @@
+[user]
+	name = Yun Hyeok Nam
+	email = nyhryan99102@gmail.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[core]
+	autocrlf = input
+[safe]
+	directory = *
