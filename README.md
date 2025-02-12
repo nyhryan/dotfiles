@@ -5,6 +5,7 @@ Currently under construction!
 ## Usage
 - `git clone --recurse-submodules https://github.com/nyhryan/ATAI-Dotfiles.git .dotfiles` to clone this repo.
 - Install `stow` to apply these dotfiles !
+    - `stow git` to apply Git configuration file!
 - Use Vim version `9.0+` !
 - Install zsh + Oh-my-zsh !
     - `mv ~/.zshrc ~/.zshrc.BAK` to avoid collision when stowing zsh
@@ -19,6 +20,5 @@ Currently under construction!
     - Neovim setup guide: [Transform Your Neovim into a IDE: A Step-by-Step Guide](https://martinlwx.github.io/en/config-neovim-from-scratch/)
     - Neovim catppuccin colorscheme: [Catppuccin for (Neo)Vim](https://github.com/catppuccin/nvim)
     - Lualine - neovim statusline: [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-- Zsh + Oh-my-zsh
-    - antigen for easy zsh plugins: [Antigen - The plugin manager for zsh](https://github.com/zsh-users/antigen)
-    - jovial theme: [Jovial](https://github.com/zthxxx/jovial)
+- Zsh + Antidote + zdotdir
+    - [zdotdir - A sample Zsh config using the antidote plugiin manager](https://github.com/getantidote/zdotdir/tree/kickstart)
