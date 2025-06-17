@@ -1,0 +1,65 @@
+[user]
+	name = nyhryan
+	email = nyhryan99102@gmail.com
+	signingkey = DE5C59F4CB3AB414
+
+[commit]
+	gpgSign = true
+	template = ~/.config/git/template
+
+[core]
+	autocrlf = input
+	compression = 9
+	whitespace = error
+
+[init]
+	defaultBranch = main
+
+[status]
+	showStash = true
+
+[diff]
+	renames = copies
+
+[push]
+	autoSetupRemote = true
+	default = current
+	followTags = true
+	gpgSign = false
+
+[pull]
+	default = current
+	rebase = true
+
+[tag]
+	gpgSign = true
+
+[rebase]
+	autoStash = true
+	missingCommitsCheck = warn
+
+[log]
+	abbrevCommit = true
+	graphColors = blue,yellow,cyan,magenta,green,red
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = -taggerdate
+
+[fetch]
+	prune = true
+
+[color "decorate"]
+	HEAD = red
+	branch = blue
+	tag = yellow
+	remoteBranch = magenta
+
+[color "branch"]
+	current = magenta
+	local = default
+	remote = yellow
+	upstream = green
+	plain = blue

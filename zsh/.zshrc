@@ -1,3 +1,5 @@
+ZSH_THEME="robbyrussell" # set by `omz`
+
 # redirects zsh completion cache to $ZSH/cache/
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
@@ -5,12 +7,12 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-# nvm setup
-if [ -d "$HOME/.nvm" ]; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
+# Source Antidote
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
+
+# GPG setup
+export GPG_TTY=$(tty)
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -42,88 +44,18 @@ HIST_STAMPS="yyyy/mm/dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-# antigen plugin manager
-ANTIGEN_PATH=~/.dotfiles
-source $ANTIGEN_PATH/antigen/antigen.zsh
-
-# Load the oh-my-zsh's library
-antigen use oh-my-zsh
-
-antigen bundles <<EOBUNDLES
-    # Bundles from the default repo (robbyrussell's oh-my-zsh)
-    git
-
-    # Syntax highlighting bundle.
-    zsh-users/zsh-syntax-highlighting
-
-    # Fish-like auto suggestions
-    zsh-users/zsh-autosuggestions
-
-    # Extra zsh completions
-    zsh-users/zsh-completions
-
-    # jovial theme (zthxxx/jovial)
-    zthxxx/jovial
-    zthxxx/zsh-history-enquirer
-
-EOBUNDLES
-
-# Load the theme
-antigen theme zthxxx/jovial
-
-# Tell antigen that you're done
-antigen apply
-
-# Jovial zsh theme customization
-JOVIAL_SYMBOL[corner.top]=''
-JOVIAL_SYMBOL[corner.bottom]=''
-JOVIAL_SYMBOL[git.dirty]='✘'
-JOVIAL_SYMBOL[arrow]='$'
-JOVIAL_SYMBOL[arrow.git-clean]='(≧∇≦)ﾉ'
-JOVIAL_SYMBOL[arrow.git-dirty]='(ﾉ˚Д˚)ﾉ'
-JOVIAL_AFFIXES[current-dir]='%3~'
 
 # User configuration
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# Setup $EDITOR
+if command -v nvim >/dev/null 2>&1; then
+	export EDITOR=nvim;
+elif command -v vim >/dev/null 2>&1; then
+	export EDITOR=vim;
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-if [ -s "$(which nvim)" ]; then
-    alias oldvim="$(which vim)"
-    alias vim='nvim'
-fi
-
-alias zshconfig='vim ~/.zshrc'
-alias python='python3'
-alias ls='ls -GF --color=auto'
-
-# disables '%' appearing after printf("..."); in C programming
-PROMPT_EOL_MARK=''
-
-# ruby settings for macOS
-if [ -d "/opt/homebrew/opt/chruby" ]; then
-    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-    chruby ruby-3.2.2
-fi
-
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# bun
-if [ -d "$HOME/.bun" ]; then
-    export BUN_INSTALL="$HOME/.bun"
-    export PATH="$BUN_INSTALL/bin:$PATH"
-fi
