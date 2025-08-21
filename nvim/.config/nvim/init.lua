@@ -1,26 +1,26 @@
+require("config.lazy")
+
+vim.opt.termguicolors = true
+
 -- In Insert mode: Use the appropriate number of spaces to insert a <Tab>.  
-vim.opt.expandtab=true
-vim.opt.shiftwidth=4
-vim.opt.softtabstop=4
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
--- Set <Space> as Leader
-vim.api.nvim_set_keymap("n", "<Space>", "<Nop>", { noremap = true, silent = true })
-vim.g.mapleader=" "
+vim.opt.swapfile = false
+vim.opt.undofile = true
 
--- Print line number
-vim.opt.number=true
-vim.opt.relativenumber=true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 8
 
 -- Rounded floating window
 vim.opt.winborder="rounded"
-
--- Packages
-vim.pack.add({
-    { src = "https://github.com/neovim/nvim-lspconfig" },
-})
+vim.cmd.colorscheme("catppuccin")
 
 vim.lsp.enable({ "lua_ls" })
-
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
