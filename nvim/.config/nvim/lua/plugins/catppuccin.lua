@@ -6,7 +6,10 @@ return {
         priority = 1000,
         opts = {
             flavour = "frappe",
-            auto_integrations = true,
+            integrations = {
+                {},
+            },
+            -- auto_integrations = true,
         },
     }
 }

@@ -1,18 +1,17 @@
-ZSH_THEME="robbyrussell" # set by `omz`
-
-# redirects zsh completion cache to $ZSH/cache/
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-# Source Antidote
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
+# Antidote plugin manager setup 
+function is-macos() { [[ $OSTYPE == *darwin* ]]; }
+antidote_dir=${ZDOTDIR:-$HOME}/.antidote
+zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
+if [[ ! -d $antidote_dir ]]; then
+    git clone --depth=1 https://github.com/mattmc3/antidote.git $antidote_dir
+fi
 
-# GPG setup
-export GPG_TTY=$(tty)
+source $antidote_dir/antidote.zsh
+antidote load
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -38,24 +37,17 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy/mm/dd"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Common functions
+source ${ZDOTDIR:-$HOME}/.config/zsh/functions.zsh
 
+# OS specific custom zsh
+case "$OSTYPE" in
+    darwin*)
+        source "${ZDOTDIR:-$HOME}/.config/zsh/macos.zsh"
+        ;;
+    linux-gnu*)
+        source "${ZDOTDIR:-$HOME}/.config/zsh/linux.zsh"
+        ;;
+esac
 
-# User configuration
-
-# Setup $EDITOR
-if command -v nvim >/dev/null 2>&1; then
-	export EDITOR=nvim;
-elif command -v vim >/dev/null 2>&1; then
-	export EDITOR=vim;
-fi
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
+ZSH_THEME=robbyrussell

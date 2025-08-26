@@ -34,7 +34,7 @@ GIT_CONFIG_DIR=~/.config/git
 # Check if git config, template files exist and back them up if they do
 check_file "$GIT_CONFIG_DIR/config"
 check_file "$GIT_CONFIG_DIR/template"
-stow -v git
+stow -Rv git
 
 # Install Antidote (ZSH plugin manager)
 ANTIDOTE_DIR=${ZDOTDIR:-~}/.antidote
@@ -44,9 +44,8 @@ if [[ ! -d "$ANTIDOTE_DIR" ]]; then
 fi
 
 # stow ZSH config
-check_file "~/.zshrc"
-stow -v zsh
+stow -Rv zsh
 
 # tmux config
-check_file "~/.tmux.conf"
-stow -v tmux
+# check_file "~/.tmux.conf"
+stow -Rv tmux
