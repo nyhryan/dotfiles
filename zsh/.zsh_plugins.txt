@@ -13,3 +13,5 @@ ohmyzsh/ohmyzsh path:plugins/iterm2 conditional:is-macos
 # zsh-users
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
+
+lukechilds/zsh-nvm

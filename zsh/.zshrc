@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
+# export ZSH="$HOME/.oh-my-zsh"
+# source $ZSH/oh-my-zsh.sh
 
 # Antidote plugin manager setup 
 function is-macos() { [[ $OSTYPE == *darwin* ]]; }
@@ -51,3 +51,6 @@ case "$OSTYPE" in
 esac
 
 ZSH_THEME=robbyrussell
+
+# bun completions
+[ -s "/Users/atai/.bun/_bun" ] && source "/Users/atai/.bun/_bun"
