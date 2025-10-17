@@ -1,16 +1,23 @@
 [user]
 	name = nyhryan
 	email = nyhryan99102@gmail.com
-	signingkey = DE5C59F4CB3AB414
+	signingkey = ~/.ssh/id_ed25519.pub
 
 [commit]
 	gpgSign = true
 	template = ~/.config/git/template
 
 [core]
+	# Windows = true
+	# autocrlf = true
+
+	# Mac/Unix = input
 	autocrlf = input
+
 	compression = 9
 	whitespace = error
+[gpg]
+	format = ssh
 
 [init]
 	defaultBranch = main
