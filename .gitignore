@@ -1,2 +1,15 @@
 packer_compiled.lua
 .netrwhist
+
+.antidote/
+.zcompcache/
+.zsh_sessions/
+.zcompdump*
+.zsh_history
+.zsh_plugins.zsh
+*.bak
+*.local
+*.local.zsh
+*.zwc
+*.zwc.old
+~*
