@@ -23,4 +23,4 @@ set wildmode=longest:full,full
 set wildoptions=pum
 
 set termguicolors
-colorscheme catppuccin_mocha
+colorscheme catppuccin_frappe

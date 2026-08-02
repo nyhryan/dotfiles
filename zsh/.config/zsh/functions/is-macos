@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#function is-macos {
+[[ $OSTYPE = *darwin* ]] || return 1 
+#}

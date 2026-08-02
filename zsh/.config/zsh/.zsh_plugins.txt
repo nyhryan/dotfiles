@@ -4,14 +4,15 @@ getantidote/use-omz
 # Add in some oh-my-zsh stuff
 ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 
 # Add macOS specific plugins
 ohmyzsh/ohmyzsh path:plugins/brew   conditional:is-macos
 ohmyzsh/ohmyzsh path:plugins/macos  conditional:is-macos
 ohmyzsh/ohmyzsh path:plugins/iterm2 conditional:is-macos
 
-# zsh-users
+# Add core plugins that make Zsh a bit more like Fish
+zsh-users/zsh-autosuggestions   path:src kind:fpath
 zsh-users/zsh-autosuggestions
-zsh-users/zsh-syntax-highlighting
-
-lukechilds/zsh-nvm
+zsh-users/zsh-history-substring-search
+zdharma-continuum/fast-syntax-highlighting
